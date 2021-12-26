@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/ivToy"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="android_animate.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@id/ivToy"
+            android:layout_toRightOf="@id/ivToy"
+            android:gravity="center"
+            android:text="ANDROID"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvGenre"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/tvName"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/ivToy"
+            android:layout_toRightOf="@id/ivToy"
+            android:gravity="center"
+            android:text="TOY"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvAge"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/tvGenre"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/ivToy"
+            android:layout_toRightOf="@id/ivToy"
+            android:gravity="center"
+            android:text="8 Months"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ivCloseBottomSheet"
+            android:layout_width="43dp"
+            android:layout_height="34dp"
+            app:srcCompat="@drawable/ic_baseline_close_24" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
