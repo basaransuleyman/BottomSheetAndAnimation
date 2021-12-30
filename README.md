@@ -2,7 +2,7 @@
 
  ## App Demo
 
-![Demo](https://im2.ezgif.com/tmp/ezgif-2-68c170ff4e.gif)
+![Demo](https://media3.giphy.com/media/aOrkTH5iB7h3VdC71n/giphy.gif?cid=790b76113d74d466af4dc2461e4e35446f1bd9bb09b9ae2e&rid=giphy.gif&ct=g)
  
  ## Using 
 
