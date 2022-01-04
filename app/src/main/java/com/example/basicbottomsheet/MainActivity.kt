@@ -1,5 +1,6 @@
 package com.example.basicbottomsheet
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,6 +20,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(_binding.root)
 
         bindingMainScreen()
+        coroutineWithClickListener()
+    }
+
+    fun coroutineWithClickListener() {
         _binding.imageView.setOnClickListener {
             CoroutineScope(Dispatchers.Main).launch {
                 bindingBeforeDelay()
@@ -27,26 +32,32 @@ class MainActivity : AppCompatActivity() {
                 openBottomSheet()
             }
         }
-
     }
 
-    fun bindingMainScreen(){
-        _binding.textView.visibility = View.VISIBLE
-        _binding.imageView.visibility = View.VISIBLE
+    fun bindingMainScreen() {
+        with(_binding) {
+            tvClickMessage.visibility = View.VISIBLE
+            imageView.visibility = View.VISIBLE
+        }
     }
 
-    fun bindingBeforeDelay(){
-        _binding.textView.visibility = View.GONE
-        _binding.imageView.visibility = View.GONE
-        _binding.ivDelayAnimate.visibility = View.VISIBLE
-        _binding.textView2.visibility = View.VISIBLE
+    fun bindingBeforeDelay() {
+        with(_binding) {
+            tvClickMessage.visibility = View.GONE
+            imageView.visibility = View.GONE
+            ivDelayAnimate.visibility = View.VISIBLE
+            tvBottomSheetMessage.visibility = View.VISIBLE
+        }
     }
 
-    fun bindingAfterDelay(){
-        _binding.ivDelayAnimate.visibility = View.GONE
-        _binding.textView2.visibility = View.GONE
+    fun bindingAfterDelay() {
+        with(_binding) {
+            ivDelayAnimate.visibility = View.GONE
+            tvBottomSheetMessage.visibility = View.GONE
+        }
     }
 
+    @SuppressLint("InflateParams")
     fun openBottomSheet() {
         val bottomSheet = BottomSheetDialog(this)
         val view = layoutInflater.inflate(R.layout.bottom_sheet, null)
@@ -57,9 +68,12 @@ class MainActivity : AppCompatActivity() {
             bindingMainScreen()
         }
 
-        bottomSheet.setCancelable(false)
-        bottomSheet.setContentView(view)
-        bottomSheet.show()
+        with(bottomSheet) {
+            setCancelable(false)
+            setContentView(view)
+            show()
+        }
+
     }
 
 }
